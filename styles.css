@@ -17,7 +17,7 @@ h1 {
 hr {
   width: 100px;
   height: 2px;
-  background: #E559F9;
+  background: #184680;
   margin: 0px;
   border: none;
 }
@@ -40,6 +40,7 @@ label {
   font-size: 14px;
   font-weight: 700;
 }
+
 input {
   font-family: "poppins", sans-serif;
   width: Fixed (320px)px;
@@ -48,7 +49,6 @@ input {
   border: 1px solid #adadad;
   margin-bottom: 5px;
   font-size: 13px;
-  gap: 10px;
 }
 
 input:focus {
@@ -67,8 +67,15 @@ button {
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
 }
 
 button:hover {
-  background: #12375e;
+  background: #002d8d;
+  transform: scale 0.2s;
+  box-shadow: 0 0 5px 3px rgb(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: scale(0.98);
 }
