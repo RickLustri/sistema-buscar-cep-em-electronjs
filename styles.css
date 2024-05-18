@@ -4,7 +4,20 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 95vh;
+  height: 100vh;
+  overflow-y: hidden;
+  color: white;
+}
+
+#img-body {
+  background-image:  url("imagens/city.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  filter: blur(2px);
 }
 
 h1 {
@@ -12,19 +25,26 @@ h1 {
   font-size: 22px;
   font-weight: 800;
   margin: 10px;
+  color : white;
+  filter: drop-shadow(0px 0px 5px rgb(0, 0, 0));
+  z-index: 2;
 }
 
 hr {
   width: 100px;
   height: 2px;
-  background: #184680;
+  background: #ffffff;
   margin: 0px;
   border: none;
+  filter: drop-shadow(0px 0px 5px rgb(0, 0, 0));
+  z-index: 2;
 }
 
 img {
   width: 128px;
   height: 128px;
+  filter: drop-shadow(0px 0px 5px rgb(0, 0, 0));
+  z-index: 2;
 }
 
 form {
@@ -33,12 +53,14 @@ form {
   width: center;
   margin: 80px;
   gap: 5px;
+  z-index: 2;
 }
 
 label {
   font-family: "poppins", sans-serif;
   font-size: 14px;
   font-weight: 700;
+  filter: drop-shadow(0px 0px 5px rgb(0, 0, 0));
 }
 
 input {
@@ -49,6 +71,7 @@ input {
   border: 1px solid #adadad;
   margin-bottom: 5px;
   font-size: 13px;
+  filter: drop-shadow(0px 0px 5px rgb(0, 0, 0));
 }
 
 input:focus {
@@ -61,13 +84,14 @@ button {
   width: Fixed (320px)px;
   height: Fixed (40px)px;
   border-radius: 7px;
-  border: 1px solid #adadad;
+  border: 1px solid #000000;
   background: #184680;
-  color: #fff;
+  color: #ffffff;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+  filter: drop-shadow(0px 0px 5px rgb(0, 0, 0));
 }
 
 button:hover {
