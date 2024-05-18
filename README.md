@@ -1,7 +1,7 @@
 ## Sobre o projeto
 O projeto consiste em um aplicativo Desktop para fazer busca pelo CEP
 
-![PRINT DO APP](./imagens/printapp.png)
+![PRINT DO APP](./imagens/printtela.png)
 
 ## Tecnologias
 - [Electron](https://www.electronjs.org/pt/)
