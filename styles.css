@@ -20,13 +20,23 @@ body {
   filter: blur(2px);
 }
 
+#fundo {
+  width: 420px;
+  height: 500px;
+  position: absolute;
+  border: #184680 2px solid;
+  border-radius: 10px;
+  background: rgba(218, 217, 217, 0.8);
+  box-shadow: #000000 0px 0px 10px;
+}
+
 h1 {
   font-family: "poppins", sans-serif;
   font-size: 22px;
   font-weight: 800;
   margin: 10px;
   color : white;
-  filter: drop-shadow(0px 0px 5px rgb(0, 0, 0));
+  filter: drop-shadow(0px 0px 3px rgb(0, 0, 0));
   z-index: 2;
 }
 
@@ -36,14 +46,14 @@ hr {
   background: #ffffff;
   margin: 0px;
   border: none;
-  filter: drop-shadow(0px 0px 5px rgb(0, 0, 0));
+  filter: drop-shadow(0px 0px 3px rgb(0, 0, 0));
   z-index: 2;
 }
 
 img {
   width: 128px;
   height: 128px;
-  filter: drop-shadow(0px 0px 5px rgb(0, 0, 0));
+  filter: drop-shadow(0px 0px 3px rgb(0, 0, 0));
   z-index: 2;
 }
 
@@ -60,7 +70,7 @@ label {
   font-family: "poppins", sans-serif;
   font-size: 14px;
   font-weight: 700;
-  filter: drop-shadow(0px 0px 5px rgb(0, 0, 0));
+  filter: drop-shadow(0px 0px 3px rgb(0, 0, 0));
 }
 
 input {
@@ -71,7 +81,7 @@ input {
   border: 1px solid #adadad;
   margin-bottom: 5px;
   font-size: 13px;
-  filter: drop-shadow(0px 0px 5px rgb(0, 0, 0));
+  filter: drop-shadow(0px 0px 3px rgb(0, 0, 0));
 }
 
 input:focus {
@@ -91,7 +101,7 @@ button {
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
-  filter: drop-shadow(0px 0px 5px rgb(0, 0, 0));
+  filter: drop-shadow(0px 0px 3px rgb(0, 0, 0));
 }
 
 button:hover {
