@@ -18,12 +18,19 @@
     <h1>Aplicativo para pesquisa de CEP</h1>
     <hr />
 
-    <form>
+    <form id="fomulario">
         <label for="cep">CEP da Cidade</label>
         <input id="cep" type="text" name="cep" placeholder="Digite o CEP" />
         <button type="submit">Pesquisar CEP</button>
     </form>
+    <div id="result">
+        <h3>Resuldado da busca</h3>
+        <p id="resultado"></p>
+    </div>
     <div id="img-body"></div>
     <div id="fundo"></div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
