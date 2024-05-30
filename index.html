@@ -3,33 +3,48 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicativo para pesquisa de CEP</title>
+    <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <img src="imagens/image.png" alt="logo" />
-    <h1>Aplicativo para pesquisa de CEP</h1>
+    <img src="./imagens/image.png" alt="Logo do sistema">
+    <h1 class="titulo">Aplicativo para pesquisa de CEP</h1>
+
     <hr />
 
-    <form id="fomulario">
-        <label for="cep">CEP da Cidade</label>
-        <input id="cep" type="text" name="cep" placeholder="Digite o CEP" />
+    <form id="formulario">
+        <label for="cep">CEP da cidade</label>
+        <input id="cep" type="text" name="cep" placeholder="Digite o CEP da cidade" />
         <button type="submit">Pesquisar CEP</button>
     </form>
-    <div id="result">
-        <h3>Resuldado da busca</h3>
-        <p id="resultado"></p>
-    </div>
-    <div id="img-body"></div>
-    <div id="fundo"></div>
+    <table class="tabela">
 
+        <caption>
+            <h3>CEP'S PESQUISADOS</h3>
+        </caption>
+        <thead>
+            <tr>
+                <th>CEP</th>
+                <th>RUA</th>
+                <th>BAIRRO</th>
+                <th>CIDADE</th>
+                <th>UF</th>
+            </tr>
+        </thead>
+
+        <tbody id="tbody">
+        </tbody>
+
+    </table>
+
+
+    <!-- Minha tag de script -->
     <script src="script.js"></script>
 </body>
 

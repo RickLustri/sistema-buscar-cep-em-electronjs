@@ -1,6 +1,8 @@
 // Pegando os elemento no HTML por ID:
-var formulario = document.getElementById('fomulario');
+var formulario = document.getElementById('formulario');
 var cep = document.getElementById('cep');
+var tbody = document.getElementById('tbody');
+var listaDeCep = [];
 
 // Funcão responsável para buscar o CEP:
 function buscarCep(event) {
@@ -10,6 +12,7 @@ function buscarCep(event) {
 
     // Lendo o valor do CEP:
     var valorDoCep = cep.value;
+    console.log(valorDoCep)
 
     // Buscando o CEP no site ViaCEP:
     fetch(`https://viacep.com.br/ws/${valorDoCep}/json/`)
@@ -21,26 +24,64 @@ function buscarCep(event) {
         .then(data => {
             console.log(data)
 
-            // Exibindo os dados no HTML por ID:
-            var resultado = document.getElementById('resultado');
-            // Exibibe o resultado no HTML:
-            resultado.innerText = `CEP: ${data.cep}, ${data.logradouro}, ${data.bairro}, ${data.localidade} - ${data.uf}`
-        })
+            // Adicionando o CEP na lista:
+            listaDeCep.push(data)
+            console.log(listaDeCep)
 
+            // adicionando as linhas na tabela:
+            var novalinha = tbody.insertRow();
+
+            // adicionando as celulas na tabela:
+            var celulaCep = novalinha.insertCell(0);
+            var celulaRua = novalinha.insertCell(1);
+            var celulaBairro = novalinha.insertCell(2);
+            var celulaCidade = novalinha.insertCell(3);
+            var celulaUf = novalinha.insertCell(4);
+
+            listaDeCep.forEach(item => {
+
+                // adicionando os valores nas celulas:
+                celulaCep.innerText = item.cep;
+
+                // Aqui ele verifica se o campo 'logradouro' ou 'bairro' existe, se existir ele atribui o valor, senão atribui "---":
+                celulaRua.innerText = item.logradouro ? item.logradouro : '---';
+                celulaBairro.innerText = item.bairro ? item.logradouro : '---';
+
+                // adicionando os valores nas celulas:
+                celulaCidade.innerText = item.localidade;
+                celulaUf.innerText = item.uf;
+            })
+
+
+
+            // Exibindo os dados no HTML por ID:
+            //var resultado = document.getElementById('resultado');
+            // Exibibe o resultado no HTML:
+            //resultado.innerText = `CEP: ${data.cep}, ${data.logradouro}, ${data.bairro}, ${data.localidade} - ${data.uf}`;
+        })
     console.log(valorDoCep);
 }
 
 // Cria uma regra para não permitir que o campo cep seja preenchido com letras:
 function mascaraCep(event) {
-    event.currentTarget.maxLength = 9
-    let value = event.currentTarget.value
-    value = value.replace(/\D/g, '')
-    value = value.replace(/^(\d{5})(\d)/, '$1-$2')
-    event.currentTarget.value = value
-    return e
+    // Define o tamanho maximo do campo:
+    event.currentTarget.maxLength = 9;
+
+    // Lendo o valor do CEP:
+    let value = event.currentTarget.value;
+
+    // Formata o campo de cep:
+    value = value.replace(/\D/g, '');
+    value = value.replace(/^(\d{5})(\d)/, '$1-$2');
+
+    // Atualiza o campo de cep:
+    event.currentTarget.value = value;
+
+    // Retorna o evento:
+    return event
 }
 
 // Adicionando um evento de keyup para o campo cep:
-cep.addEventListener('keyup', mascaraCep)
+cep.addEventListener('keyup', mascaraCep);
 // Adicionando um evento de submit no formulário:
-formulario.addEventListener('submit', buscarCep)
+formulario.addEventListener('submit', buscarCep);
