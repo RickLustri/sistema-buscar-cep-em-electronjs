@@ -4,6 +4,7 @@ var cep = document.getElementById('cep');
 var tbody = document.getElementById('tbody');
 var listaDeCep = [];
 
+
 // Funcão responsável para buscar o CEP:
 function buscarCep(event) {
 
@@ -29,7 +30,7 @@ function buscarCep(event) {
             console.log(listaDeCep)
 
             // adicionando as linhas na tabela:
-            var novalinha = tbody.insertRow();
+            var novalinha = tbody.insertRow(0);
 
             // adicionando as celulas na tabela:
             var celulaCep = novalinha.insertCell(0);
@@ -40,25 +41,27 @@ function buscarCep(event) {
 
             listaDeCep.forEach(item => {
 
-                // adicionando os valores nas celulas:
-                celulaCep.innerText = item.cep;
-
-                // Aqui ele verifica se o campo 'logradouro' ou 'bairro' existe, se existir ele atribui o valor, senão atribui "---":
+                // adicionando os valores nas celulas e verificando se o dados existe:
+                celulaCep.innerText = item.cep ? item.cep : '---';
                 celulaRua.innerText = item.logradouro ? item.logradouro : '---';
                 celulaBairro.innerText = item.bairro ? item.logradouro : '---';
+                celulaCidade.innerText = item.localidade ? item.localidade : '---';
+                celulaUf.innerText = item.uf ? item.uf : '---';
 
-                // adicionando os valores nas celulas:
-                celulaCidade.innerText = item.localidade;
-                celulaUf.innerText = item.uf;
+                // remove o ultimo item da tabela:
+                if (tbody.rows.length > 4) {
+                    tbody.deleteRow(4)
+                }
             })
 
-
+        
 
             // Exibindo os dados no HTML por ID:
             //var resultado = document.getElementById('resultado');
             // Exibibe o resultado no HTML:
             //resultado.innerText = `CEP: ${data.cep}, ${data.logradouro}, ${data.bairro}, ${data.localidade} - ${data.uf}`;
         })
+
     console.log(valorDoCep);
 }
 
