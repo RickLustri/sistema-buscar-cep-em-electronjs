@@ -2,6 +2,8 @@
 var formulario = document.getElementById('formulario');
 var cep = document.getElementById('cep');
 var tbody = document.getElementById('tbody');
+
+// Criando uma lista para armazenar os CEPs pesquisados:
 var listaDeCep = [];
 
 
@@ -39,6 +41,7 @@ function buscarCep(event) {
             var celulaCidade = novalinha.insertCell(3);
             var celulaUf = novalinha.insertCell(4);
 
+
             listaDeCep.forEach(item => {
 
                 // adicionando os valores nas celulas e verificando se o dados existe:
@@ -54,6 +57,9 @@ function buscarCep(event) {
                 }
             })
 
+            // Linpa o valor do CEP no input:
+            cep.value = '';
+
         
 
             // Exibindo os dados no HTML por ID:
@@ -67,6 +73,7 @@ function buscarCep(event) {
 
 // Cria uma regra para não permitir que o campo cep seja preenchido com letras:
 function mascaraCep(event) {
+
     // Define o tamanho maximo do campo:
     event.currentTarget.maxLength = 9;
 
@@ -86,5 +93,6 @@ function mascaraCep(event) {
 
 // Adicionando um evento de keyup para o campo cep:
 cep.addEventListener('keyup', mascaraCep);
+
 // Adicionando um evento de submit no formulário:
 formulario.addEventListener('submit', buscarCep);

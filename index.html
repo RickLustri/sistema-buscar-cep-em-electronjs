@@ -14,18 +14,19 @@
 
 <body>
     <div id="fundo"></div>
-    <div id="borda"></div>
-    <div id="fundo2"></div>
-        <img src="./imagens/image.png" alt="Logo do sistema">
-        <h1 class="titulo">Aplicativo para pesquisa de CEP</h1>
+    <div id="borda">
+        <div id="fundo2">
+            <img src="./imagens/image.png" alt="Logo do sistema">
+            <h1 class="titulo">Aplicativo para pesquisa de CEP</h1>
 
-        <hr />
+            <hr />
 
-        <form id="formulario">
-            <label for="cep">CEP da cidade</label>
-            <input id="cep" type="text" name="cep" placeholder="Digite o CEP da cidade" />
-            <button type="submit">Pesquisar CEP</button>
-        </form>
+            <form id="formulario">
+                <label for="cep">CEP da cidade</label>
+                <input id="cep" type="text" name="cep" placeholder="Digite o CEP da cidade" />
+                <button type="submit">Pesquisar CEP</button>
+            </form>
+        </div>
         <table class="tabela">
 
             <caption>
@@ -45,9 +46,10 @@
             </tbody>
 
         </table>
+    </div>
 
-        <!-- Minha tag de script -->
-        <script src="script.js"></script>
+    <!-- Minha tag de script -->
+    <script src="script.js"></script>
 </body>
 
 </html>
