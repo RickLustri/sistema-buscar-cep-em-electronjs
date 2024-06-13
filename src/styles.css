@@ -8,7 +8,7 @@ body {
 }
 #fundo {
   display: block;
-  background-image: url("imagens/city.png");
+  background-image: url("../imagens/city.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

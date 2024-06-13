@@ -15,7 +15,7 @@ const createWindow = () => {
       icon: "imagens/image.png"
     })
   
-    win.loadFile('index.html')
+    win.loadFile('src/index.html')
   }
 
 
