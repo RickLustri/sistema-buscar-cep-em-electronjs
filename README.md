@@ -10,7 +10,7 @@ O projeto consiste em um aplicativo Desktop para fazer busca pelo CEP
 ## Como executar o projeto
 ```bash
 ## Clone o projeto
-git clone https://github.com/rksex/sistema-buscar-cep-em-electronjs.git
+git clone https://github.com/RickLustri/sistema-buscar-cep-em-electronjs.git
 
 ## Entre na pasta do projeto
 cd sistema-buscar-cep-em-electronjs
